@@ -169,9 +169,9 @@ endif
 # Create the tool chain library as subproject
 mctc_dep = dependency(
   'mctc-lib',
-  version: '>=0.5.1',
+  version: '>=0.6.0',
   fallback: ['mctc-lib', 'mctc_dep'],
-  default_options: ['default_library=static'],
+  default_options: ['default_library=static', 'openmp=' + get_option('openmp').to_string()],
 )
 lib_deps += mctc_dep
 
